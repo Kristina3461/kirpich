@@ -3,8 +3,8 @@ from rest_framework.routers import DefaultRouter
 
 from users.views import CustomUserViewSet
 from products.views import ProductViewSet
-from orders.views import OrderViewSet, OrderItemViewSet
-from cart.views import CartViewSet, CartItemViewSet
+from orders.views import OrderViewSet
+from cart.views import CartViewSet
 
 router_v1 = DefaultRouter()
 router_v1.register(r'users', CustomUserViewSet, basename='user')
