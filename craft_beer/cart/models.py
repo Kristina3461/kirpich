@@ -4,7 +4,6 @@ from products.models import Product
 
 class Cart(models.Model):
     """Модель для корзины"""
-    objects = None
     user = models.ForeignKey('users.CustomUser', on_delete=models.CASCADE)
     products = models.ManyToManyField(Product, through='CartItem')
 
@@ -14,7 +13,6 @@ class Cart(models.Model):
 
 class CartItem(models.Model):
     """Модель для элементов в корзине"""
-    objects = None
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
