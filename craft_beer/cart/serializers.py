@@ -10,7 +10,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class CartItemSerializer(serializers.ModelSerializer):
-    product = ProductSerializer()  # Включаем информацию о продукте
+    product = ProductSerializer()
 
     class Meta:
         model = CartItem
@@ -18,7 +18,7 @@ class CartItemSerializer(serializers.ModelSerializer):
 
 
 class CartSerializer(serializers.ModelSerializer):
-    items = CartItemSerializer(many=True)  # Связываем с CartItemSerializer
+    items = CartItemSerializer(many=True)
 
     class Meta:
         model = Cart
